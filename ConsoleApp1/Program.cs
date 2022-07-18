@@ -39,7 +39,7 @@ namespace CS24
             }
 
             Console.WriteLine($"Первое число которое повторяется чаще всего - {repeatNumber}.");
-            Console.WriteLine($"Количество повторяющихся элементов {numberRepetitions + 1}.");
+            Console.WriteLine($"Количество повторяющихся элементов - {numberRepetitions + 1}.");
         }
     }
 }
