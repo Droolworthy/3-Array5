@@ -25,6 +25,7 @@ namespace CS24
                 if (array[i] == array[i - 1])
                 {
                     count++;
+                    
                     if (count > maximumNumber)
                     {
                         maximumNumber = count;
@@ -37,7 +38,7 @@ namespace CS24
                 }
             }
 
-            Console.WriteLine($"Число {numberRepetitions} повторяется большее число раз подряд");
+            Console.WriteLine($"Число {numberRepetitions} повторяется большее количество раз.");
         }
     }
 }
