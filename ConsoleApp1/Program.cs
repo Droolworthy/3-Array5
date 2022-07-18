@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace CS24
 {
@@ -6,15 +6,13 @@ namespace CS24
     {
         static void Main(string[] args)
         {
-            int[] array = new int[30];
-            Random random = new Random();
-            int maximumNumber = 1;
+            int[] array = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 2, 13, 22, 27, 28, 29, 30 }; 
             int count = 1;
             int numberRepetitions = 0;
+            int repeatNumber = 0;
 
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = random.Next(1, 10);
                 Console.Write(array[i] + " ");
             }
 
@@ -25,20 +23,16 @@ namespace CS24
                 if (array[i] == array[i - 1])
                 {
                     count++;
-                    
-                    if (count > maximumNumber)
-                    {
-                        maximumNumber = count;
-                        numberRepetitions = array[i];
-                    }
                 }
-                else
+                else if (count > numberRepetitions)
                 {
+                    numberRepetitions = count;
+                    repeatNumber = array[i - 1];
                     count = 1;
                 }
             }
 
-            Console.WriteLine($"Число {numberRepetitions} повторяется большее количество раз.");
+            Console.WriteLine($"Число {repeatNumber} повторяется {numberRepetitions} раз подряд.");
         }
     }
 }
