@@ -6,13 +6,16 @@ namespace CS24
     {
         static void Main(string[] args)
         {
-            int[] array = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 2, 13, 22, 27, 28, 29, 30 }; 
-            int count = 1;
+            int[] array = new int[30];
+            Random random = new Random();
+            int resetCounter = 0;
+            int count = 0;
             int numberRepetitions = 0;
             int repeatNumber = 0;
 
             for (int i = 0; i < array.Length; i++)
             {
+                array[i] = random.Next(1, 10);
                 Console.Write(array[i] + " ");
             }
 
@@ -24,15 +27,20 @@ namespace CS24
                 {
                     count++;
                 }
-                else if (count > numberRepetitions)
+                else
+                {
+                    count = resetCounter;
+                }
+
+                if (numberRepetitions < count)
                 {
                     numberRepetitions = count;
-                    repeatNumber = array[i - 1];
-                    count = 1;
+                    repeatNumber = array[i];
                 }
             }
 
-            Console.WriteLine($"Число {repeatNumber} повторяется {numberRepetitions} раз подряд.");
+            Console.WriteLine($"Первое число которое повторяется чаще всего - {repeatNumber}.");
+            Console.WriteLine($"Количество повторяющихся элементов {numberRepetitions + 1}.");
         }
     }
 }
