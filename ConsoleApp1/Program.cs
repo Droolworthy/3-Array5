@@ -31,7 +31,6 @@ namespace CS24
                 {
                     count = resetCounter;
                 }
-
                 if (numberRepetitions < count)
                 {
                     numberRepetitions = count;
